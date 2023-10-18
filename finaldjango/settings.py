@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'post',
     'crispy_forms',
     'userauths',
+    'comment',
 ]
 
 MIDDLEWARE = [
