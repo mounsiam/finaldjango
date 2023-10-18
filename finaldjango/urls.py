@@ -32,6 +32,7 @@ urlpatterns = [
 
     # profile
     path('<username>/', UserProfile, name='profile'),
+    path('<username>/editProfile/', editProfile, name='edit-Profile'),
     path('<username>/saved/', UserProfile, name='profilefavourite'),
     path('<username>/follow/<option>/', follow, name='follow'),
 
