@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
-from userauths.views import UserProfile, EditProfile
+from authy.views import UserProfile, EditProfile
 
 urlpatterns = [
     # Profile Section

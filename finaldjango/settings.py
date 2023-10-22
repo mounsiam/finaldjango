@@ -43,10 +43,11 @@ INSTALLED_APPS = [
 
     'post',
     'crispy_forms',
-    'userauths',
+    'authy',
     'comment',
     'directs',
     'notification',
+
 
 ]
 

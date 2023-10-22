@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from post.models import Post, Tag, Follow, Stream, Likes
 from django.contrib.auth.models import User
 from post.forms import NewPostform
-from userauths.models import Profile
+from authy.models import Profile
 from django.urls import resolve
 from comment.models import Comment
 from comment.forms import NewCommentForm
@@ -105,7 +105,7 @@ def PostDetail(request, post_id):
         'comments': comments
     }
 
-    return render(request, 'post-detail.html', context)
+    return render(request, 'postdetail.html', context)
 
 
 @login_required

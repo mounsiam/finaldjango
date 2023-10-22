@@ -8,9 +8,10 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+
 from post.models import Post, Follow, Stream
 from django.contrib.auth.models import User
-from userauths.models import Profile
+from authy.models import Profile
 from .forms import EditProfileForm, UserRegisterForm
 from django.urls import resolve
 from comment.models import Comment
@@ -32,11 +33,7 @@ def UserProfile(request, username):
     posts_count = Post.objects.filter(user=user).count()
     following_count = Follow.objects.filter(follower=user).count()
     followers_count = Follow.objects.filter(following=user).count()
-
     # count_comment = Comment.objects.filter(post=posts).count()
-
-    # FOLLOW STATUS
-
     follow_status = Follow.objects.filter(following=user, follower=request.user).exists()
 
     # pagination
@@ -110,7 +107,7 @@ def register(request):
             new_user = form.save()
             # Profile.get_or_create(user=request.user)
             username = form.cleaned_data.get('username')
-            messages.success(request, f' your account was created!!')
+            messages.success(request, f'Hurray your account was created!!')
 
             # Automatically Log In The User
             new_user = authenticate(username=form.cleaned_data['username'],
