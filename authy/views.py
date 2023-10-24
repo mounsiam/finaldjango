@@ -33,7 +33,6 @@ def UserProfile(request, username):
     posts_count = Post.objects.filter(user=user).count()
     following_count = Follow.objects.filter(follower=user).count()
     followers_count = Follow.objects.filter(following=user).count()
-    # count_comment = Comment.objects.filter(post=posts).count()
     follow_status = Follow.objects.filter(following=user, follower=request.user).exists()
 
     # pagination

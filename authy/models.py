@@ -31,8 +31,8 @@ class Profile(models.Model):
         super().save(*args, **kwargs)
 
         img = Image.open(self.image.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
+        if img.height > 250 or img.width > 250:
+            output_size = (250, 250)
             img.thumbnail(output_size)
             img.save(self.image.path)
 

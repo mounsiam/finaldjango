@@ -1,3 +1,4 @@
+from django.db import models
 from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
@@ -33,3 +34,4 @@ class Comment(models.Model):
 
 post_save.connect(Comment.user_comment_post, sender=Comment)
 post_delete.connect(Comment.user_del_comment_post, sender=Comment)
+# Create your models here.

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'post',
     'crispy_forms',
+    'crispy_bootstrap4',
     'authy',
     'comment',
     'directs',
@@ -145,6 +146,8 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'sign-in'
 
 LOGIN_URL = 'sign-in'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

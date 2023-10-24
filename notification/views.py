@@ -7,7 +7,7 @@ def ShowNotification(request):
     notifications = Notification.objects.filter(user=user).order_by('-date')
 
     context = {
-        'notifications': notifications,
+        'notification': notifications,
 
     }
     return render(request, 'notifications/notification.html', context)

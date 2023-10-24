@@ -148,9 +148,9 @@
                             </div>
 
                             {% if follow_status == True %}
-                            <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button">Follow</a>
+                            <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button"><button class="btn btn-primary"> Follow </button></a>
                             {% else %}
-                            <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button" >Follow</a>
+                            <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button" ><button class="btn btn-primary"> Follow </button></a>
                             {% endif %}
                         </div>
                         {% endif %}
@@ -179,7 +179,7 @@
                 <div class="side-menu__suggestions-section">
                     <div class="side-menu__suggestions-header">
                         <h2>Suggestions for You</h2>
-                        <button>See All</button>
+
                     </div>
                     <div class="side-menu__suggestions-content">
                         {% for user in all_users %}
@@ -199,9 +199,9 @@
                                 </div>
 
                                 {% if follow_status == True %}
-                                <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button">Follow</a>
+                                <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button"><button class="btn btn-primary"> Follow </button></a>
                                 {% else %}
-                                <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button">Follow</a>
+                                <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button"><button class="btn btn-primary"> Follow </button></a>
                                 {% endif %}
                             </div>
                             {% endif %}

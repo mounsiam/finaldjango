@@ -28,7 +28,7 @@ urlpatterns = [
     path('users/', include('authy.urls')),
     path('', include('post.urls')),
     path('message/', include('directs.urls')),
-    path('notifications/', include('notification.urls')),
+    path('notification/', include('notification.urls')),
 
     # profile url section
     path('<username>/', UserProfile, name='profile'),
