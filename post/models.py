@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.base import Model
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import Group
+from django.utils.translation import gettext as _
 from django.db.models.signals import post_save, post_delete
 from django.utils.text import slugify
 from django.urls import reverse
@@ -89,6 +92,8 @@ class Follow(models.Model):
         following = follow.following
         notify = Notification.objects.filter(sender=sender, user=following, notification_types=3)
         notify.delete()
+
+
 
 class Stream(models.Model):
     following = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='stream_following')

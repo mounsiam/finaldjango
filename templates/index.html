@@ -198,10 +198,10 @@
                                     <span>@{{user.username}}</span>
                                 </div>
 
-                                {% if follow_status == True %}
-                                <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button"><button class="btn btn-primary"> Follow </button></a>
+                               {% if follow_status == True %}
+                                <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button">Follow</a>
                                 {% else %}
-                                <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button"><button class="btn btn-primary"> Follow </button></a>
+                                <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button">Follow</a>
                                 {% endif %}
                             </div>
                             {% endif %}
