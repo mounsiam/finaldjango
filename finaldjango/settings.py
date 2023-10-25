@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     'post',
     'crispy_forms',
-    'crispy_bootstrap4',
+    'crispy_bootstrap5',
     'authy',
     'comment',
     'directs',
@@ -147,9 +147,9 @@ LOGOUT_REDIRECT_URL = 'sign-in'
 
 LOGIN_URL = 'sign-in'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

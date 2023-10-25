@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from notification.models import Notification
 
 from post.models import Post, Tag, Follow, Stream, Likes
 from django.contrib.auth.models import User
@@ -131,6 +132,13 @@ def like(request, post_id):
 
     if not liked:
         Likes.objects.create(user=user, post=post)
+        Notification.objects.create(
+            post=post,
+            sender=user,
+            user=post.user,
+            notification_types=1,
+            text_preview="New Like",
+        )
         current_likes = current_likes + 1
     else:
         Likes.objects.filter(user=user, post=post).delete()

@@ -5,10 +5,10 @@ from notification.models import Notification
 def ShowNotification(request):
     user = request.user
     notifications = Notification.objects.filter(user=user).order_by('-date')
-
+    for n in notifications:
+        print(n.notification_types)
     context = {
-        'notification': notifications,
-
+        'notifications': notifications,
     }
     return render(request, 'notifications/notification.html', context)
 
